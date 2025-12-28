@@ -58,6 +58,7 @@ More in the wiki - TO DO, but in essence:
   - Comment well so others can follow your thinking
   - Prioritise readability
   - Maintain consistency
+
 There is a useful style guide by Google [here](https://google.github.io/styleguide/shellguide.html)
 
 ### Queries
