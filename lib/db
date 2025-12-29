@@ -1,0 +1,37 @@
+#!/bin/bash
+
+# Usage : db [ command [arguments] ]
+
+# configs
+source ./config.d/db.ini
+
+# libs
+source ./common/common.sh
+source ./utils/db.sh
+
+# get params and process command
+# everything is in lowecase
+command=${1,,}
+arg1=${2,,}
+
+#echo -e "1: ${command}, 2: ${arg1}"
+#exit 0
+
+# ensure root - this utility must be run as root
+ensure_root
+
+# ok to proceed
+case "${command}" in
+
+  "install") # install the DB specified - mariadb,
+    db-install "${arg1}"
+    ;;
+
+  "remove") # uninstall the DB specified - mariadb,
+    db-remove "${arg1}"
+    ;;
+
+
+  *) usage ;;
+
+esac
